@@ -31,18 +31,21 @@ public class SongStorage {
         songToFind = "You";
         find(songToFind);
 
-
-
-
-
-
-
         //CRUD - Create, Read, Update, Delete
 
     }
 
     //Declare- Creating- Preparing a method
-    public static void add(String songToAdd){ // Parameter is a reference to songTiles, but only available in method scope. (Can have different name.)
+    public static boolean add(String songToAdd){ // Parameter is a reference to songTiles, but only available in method scope. (Can have different name.)
+
+        // No duplicates allowed
+
+        for (String songName :
+                songTitles) {
+            if (songName.equalsIgnoreCase(songToAdd)) {
+                return false;
+            }
+        }
 
         // Add behavior
 
@@ -59,20 +62,21 @@ public class SongStorage {
 
         System.out.println("Song added");
         System.out.println("Arrays.toString(songTitle) = " + Arrays.toString(songTitles));
+        return true;
 
     }
 
 
-    public static void find(String songToFind){
+    public static String find(String songToFind){
         //Find
 
-        boolean songFound = false;
+        String songFound = null;
 
         //Look for name
         for (int i = 0; i < songTitles.length; i++) {
 
             if (songToFind.equalsIgnoreCase(songTitles[i])){
-                songFound = true;
+                songFound = songToFind;
                 System.out.println("Found!");
                 break;
             }else{
@@ -81,6 +85,7 @@ public class SongStorage {
         }
 
         System.out.println("songFound = " + songFound);
+        return songFound;
     }
 
 
