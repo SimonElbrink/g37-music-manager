@@ -1,11 +1,20 @@
 package se.lexicon;
 
+import org.junit.Before;
 import org.junit.Test;
+import se.lexicon.data.SongStorage;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.*; // WildCard - imports every static method from Assert.
 
 
 public class SongStorageTest {
+
+    @Before
+    public void init(){
+        String[] testSongs = {"Here Come the Sun", "Happy Day", "Java is On My Mind"};
+        SongStorage.setSongTitles(testSongs);
+
+    }
 
     @Test
     public void test_add_successfully() {
@@ -22,7 +31,7 @@ public class SongStorageTest {
     }
 
     @Test
-    public void test_add_unsuccessfully(){
+    public void test_add_unsuccessfully_duplicates(){
         //Not Allowed to add duplicates. hopefully...
 
         //Arrange

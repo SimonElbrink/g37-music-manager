@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.data;
 
 import java.util.Arrays;
 
@@ -6,33 +6,8 @@ public class SongStorage {
     //Field variable - Variable in Class
     private static String[] songTitles = new String[] {"Here Come the Sun", "Happy Day", "Java is On My Mind"};
 
-    public static void main(String[] args) {
-
-
-        System.out.println("Arrays.toString(songTitles) = " + Arrays.toString(songTitles));
-
-
-
-        //Variable
-        String songToAdd = "Mr. Blue Sky";
-
-        //Using - Calling a method
-        add(songToAdd);
-
-        songToAdd = "You";
-        add(songToAdd);
-
-
-
-
-        String songToFind = "Java is On My Mind";
-        find(songToFind);
-
-        songToFind = "You";
-        find(songToFind);
-
-        //CRUD - Create, Read, Update, Delete
-
+    public static void setSongTitles(String[] songTitles) {
+        SongStorage.songTitles = songTitles;
     }
 
     //Declare- Creating- Preparing a method
