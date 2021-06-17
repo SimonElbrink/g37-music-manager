@@ -46,16 +46,16 @@ public class App
                 String songToAdd = "Mr. Blue Sky";
 
                 //Using - Calling a method
-                SongStorage.add(songToAdd);
+                SongStorage.addSongToStorage(songToAdd);
 
                 songToAdd = "You";
-                add(songToAdd);
+                addSongToStorage(songToAdd);
 
 
                 String songToFind = "Java is On My Mind";
-                find(songToFind);
+                findTitle(songToFind);
 
                 songToFind = "You";
-                find(songToFind);
+                findTitle(songToFind);
         }
 }
