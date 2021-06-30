@@ -7,6 +7,7 @@ public class Album {
 
     private String name;
     private String releaseDate;
+    //Songs?
 
 
     public Album(String name, String releaseDate) {
